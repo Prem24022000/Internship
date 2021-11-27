@@ -9,16 +9,11 @@
     </header>
 
     <section id="main">
-        <div class="bar bar-black">
-            <button class="bar-item button-item" onclick="openTab('login-div')">LOGIN</button>
-            <button class="bar-item button-item" onclick="openTab('signup-div')">SIGNUP</button>
-        </div>
-
         <div id="login-div" class="contain tab-content">
             <div class="outline"></div>
             <h1>Login.</h1>
             <h6>Log in to existing account</h6>
-            <form action="/login" method="post" class="login-form">
+            <form action="/admin" method="post" class="login-form">
                 <div class="login-input">
                     <label for="email">Enter e-Mail ID</label></br>
                     <input name="email" type="text">
@@ -27,25 +22,6 @@
                     <label for="password">Enter Password</label></br>
                     <input name="password" type="password">
                 </div>
-                <input type="submit">
-            </form>
-        </div>
-
-        <div id="signup-div" class="contain tab-content" style="display: none">
-            <div class="outline"></div>
-            <h1>Sign up.</h1>
-            <h6>Create new account</h6>
-            <form action="/sign-up" method="post" class="signup-form">
-
-                <div class="signup-input">
-                    <label for="email">e-Mail</label></br>
-                    <input type="text" name="email">
-                </div>
-                <div class="signup-input">
-                    <label for="password">Enter Password</label></br>
-                    <input type="password" name="password">
-                </div>
-                
                 <input type="submit">
             </form>
         </div>

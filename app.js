@@ -78,8 +78,22 @@ app.get("/admin", function(req, res){
   res.render("admin");
 });
 
+app.get("/inspect", function(req, res){
+  Detail.find({}, function(err, foundDetails){
+    if(!err){
+      res.render("inspect", {details: foundDetails});
+    }
+  });
+});
+
 app.post("/admin", function(req, res){
-  console.log(req.body);
+  Admin.findOne({email: req.body.email}, function(err, detail){
+    bcrypt.compare(req.body.password, detail.password, function(err, result){
+      if(result === true){
+        res.redirect("/inspect");
+      }
+    });
+  });
 });
 
 app.post("/sign-up", function(req, res){
