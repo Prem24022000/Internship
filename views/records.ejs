@@ -1,0 +1,21 @@
+<%-include("partials/header")-%>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>DOB</th>
+        <th>Phone No.</th>
+    </tr>
+
+    <% detail.forEach(function(student){ %>
+        <tr>
+            <td><%=student.name%></td>
+            <td><%=student.email%></td>
+            <td><%=student.DOB%></td>
+            <td><%=student.phone%></td>
+        </tr>
+    <% }); %>
+</table>
+
+<%-include("partials/footer")-%>

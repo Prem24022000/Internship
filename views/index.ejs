@@ -1,0 +1,64 @@
+<%-include("partials/header")-%>
+    <nav>
+      <h1>Student Records</h1>
+      <div class="log-options">
+        <a href="/">Student</a>
+        <a href="/admin">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="main">
+    <div class="bar bar-black">
+      <button class="bar-item button-item" onclick="openTab('login-div')">LOGIN</button>
+      <button class="bar-item button-item" onclick="openTab('signup-div')">SIGNUP</button>
+    </div>
+
+    <div id="login-div" class="contain tab-content">
+      <div class="outline"></div>
+      <h1>Login.</h1>
+      <h6>Log in to existing account</h6>
+      <form action="/login" method="post" class="login-form">
+        <div class="login-input">
+          <label for="email">Enter e-Mail ID</label></br>
+          <input name="email" type="text">
+        </div>
+        <div class="login-input">
+          <label for="password">Enter Password</label></br>
+          <input name="password" type="password">
+        </div>
+        <input type="submit">
+      </form>
+    </div>
+
+    <div id="signup-div" class="contain tab-content" style="display: none">
+      <div class="outline"></div>
+      <h1>Sign up.</h1>
+      <h6>Create new account</h6>
+      <form action="/sign-up" method="post" class="signup-form">
+        <div class="signup-input">
+          <label for="name">Name</label></br>
+          <input type="text" name="name">
+        </div>
+        <div class="signup-input">
+          <label for="email">e-Mail</label></br>
+          <input type="text" name="email">
+        </div>
+        <div class="signup-input">
+          <label for="password">Enter Password</label></br>
+          <input type="password" name="password">
+        </div>
+        <div class="signup-input">
+          <label for="phone">Phone No.</label></br>
+          <input type="number" name="number">
+        </div>
+        <div class="signup-input">
+          <label for="start">Date of Birth</label>
+          <input type="date" id="start" name="date" value="" min="1970-01-01" max="">
+        </div>
+        <input type="submit">
+      </form>
+    </div>
+  </section>
+
+<%-include("partials/footer")-%>
